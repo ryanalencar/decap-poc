@@ -26,7 +26,7 @@ collections:
         widget: string
       - label: Body
         name: body
-        widget: string
+        widget: markdown
     meta:
       {
         path:
@@ -36,8 +36,8 @@ collections:
             options:
               [
                 { label: "Ágil", value: "agil" },
-                { label: "Arquitetura", value:'arquitetura' },
-                { label: "Catalogo", value:'catalogo' },
+                { label: "Arquitetura", value: "arquitetura" },
+                { label: "Catalogo", value: "catalogo" },
               ],
             index_file: "_index",
           },
