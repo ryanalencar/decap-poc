@@ -4,7 +4,7 @@ backend:
   repo: ryanalencar/decap-poc
 publish_mode: editorial_workflow
 media_folder: "images/uploads"
-locale: "pt-br"
+locale: "pt"
 show_preview_links: true
 search: true
 slug:
@@ -12,14 +12,14 @@ slug:
   clean_accents: true
   sanitize_replacement: "_"
 collections:
-  - name: content
-    label: Páginas
-    label_singular: "Página"
+  - name: docs
+    label: Documentações
+    label_singular: "Documentação"
     folder: content
     create: true
     nested:
-      depth: 100 # max depth to show in the collection tree
-      summary: "{{title}}" # optional summary for a tree node, defaults to the inferred title field
+      depth: 100
+      summary: "{{title}}"
     fields:
       - label: Title
         name: title
@@ -27,6 +27,18 @@ collections:
       - label: Body
         name: body
         widget: string
-    # adding a meta object with a path property allows editing the path of entries
-    # moving an existing entry will move the entire sub tree of the entry to the new location
-    meta: { path: { widget: string, label: "Caminho", index_file: "index" } }
+    meta:
+      {
+        path:
+          {
+            widget: select,
+            label: "Página",
+            options:
+              [
+                { label: "Ágil", value: "agil" },
+                { label: "Arquitetura", value:'arquitetura' },
+                { label: "Catalogo", value:'catalogo' },
+              ],
+            index_file: "_index",
+          },
+      }
