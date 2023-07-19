@@ -21,12 +21,12 @@ collections:
       depth: 100 # max depth to show in the collection tree
       summary: "{{title}}" # optional summary for a tree node, defaults to the inferred title field
     fields:
-      - label: Título da página
+      - label: "Título da página"
         name: title
         widget: string
       - label:
         name: body
-        widget: markdown
+        widget: string
     # adding a meta object with a path property allows editing the path of entries
     # moving an existing entry will move the entire sub tree of the entry to the new location
     meta: { path: { widget: string, label: "Caminho", index_file: "index" } }
