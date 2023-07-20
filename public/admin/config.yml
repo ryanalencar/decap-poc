@@ -21,24 +21,29 @@ collections:
       depth: 100
       summary: "{{title}}"
     fields:
-      - label: Title
+      - label: "Título da página"
         name: title
         widget: string
-      - label: Body
+      - label: "Conteúdo da página"
         name: body
         widget: markdown
     meta:
       {
         path:
           {
-            widget: select,
-            label: "Página",
-            options:
-              [
-                { label: "Ágil", value: "agil" },
-                { label: "Arquitetura", value: "arquitetura" },
-                { label: "Catalogo", value: "catalogo" },
-              ],
-            index_file: "_index",
+            widget: string,
+            label: "Caminho do arquivo (ex: agil/.../...)",
+            name: path,
           },
       }
+      # {
+      #   widget: select,
+      #   label: "Página",
+      #   options:
+      #     [
+      #       { label: "Ágil", value: "agil" },
+      #       { label: "Arquitetura", value: "arquitetura" },
+      #       { label: "Catalogo", value: "catalogo" },
+      #     ],
+      #   index_file: "_index",
+      # }, }
